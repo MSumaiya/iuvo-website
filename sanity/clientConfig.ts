@@ -9,6 +9,8 @@
 
     import { defineConfig } from 'sanity'
     import { deskTool } from 'sanity/desk'
+    import { schemaTypes } from './schemaTypes'
+    
     
     export default defineConfig({
       projectId: 'byhbrcd9',
@@ -17,6 +19,9 @@
       apiVersion: '2023-01-01',
       basePath: '/admin',              // ✅ This mounts the Studio at /admin
       plugins: [deskTool()],
+     schema: {
+        types: schemaTypes,
+             },
       useCdn: false
     })
     

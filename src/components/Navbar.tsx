@@ -1,53 +1,89 @@
-'use client'
+'use client';
 
-import Link from 'next/link'
-import { useEffect, useState } from 'react'
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
-import { sanityClient } from '@/../sanity/client'
-import { navQuery } from '@/../sanity/queries'
+import { usePathname } from 'next/navigation';
+import { sanityClient } from '@/../sanity/client';
+import { navQuery } from '@/../sanity/queries';
 
 interface NavItem {
-  label: string
-  slug: string
+  label: string;
+  slug: string;
 }
 
-export default function Navbar() {
-  const [navItems, setNavItems] = useState<NavItem[]>([])
+interface NavbarProps {
+  variant?: 'transparent' | 'light' | 'dark';
+}
+
+export default function Navbar({ variant = 'light' }: NavbarProps) {
+  const [navItems, setNavItems] = useState<NavItem[]>([]);
+  const pathname = usePathname();
 
   useEffect(() => {
-    sanityClient.fetch(navQuery).then((data) => setNavItems(data))
-  }, [])
+    sanityClient.fetch(navQuery).then((data) => setNavItems(data));
+  }, []);
+
+  const baseStyle =
+    variant === 'transparent'
+      ? 'bg-transparent text-white'
+      : variant === 'dark'
+      ? 'bg-[#001f3f] text-white'
+      : 'bg-white text-[#001f3f]';
+
+  const linkHover =
+    variant === 'transparent'
+      ? 'hover:text-white/80'
+      : 'hover:text-[#003366]';
+
+  const bottomSpacing =
+    variant === 'transparent'
+      ? 'mb-3'
+      : '';
+
+  const isTransparent = variant === 'transparent';
 
   return (
-    <nav className="absolute top-16 left-0 w-full z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+    <nav className={`fixed top-0 left-0 w-full z-50 ${baseStyle} ${bottomSpacing} shadow-sm py-4`}> {/* Added vertical padding */}
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div className="flex items-center justify-between min-h-[80px] md:min-h-[100px]"> {/* Increased height */}
           {/* Logo */}
           <Link href="/" className="flex items-center">
-          <Image
-          src="/images/iuvo-navy-logo.png"  // The path to your image
-          alt="iUvo Logo"
-          width={80}  // Set the width of the image
-          height={30}  // Set the height of the image
-        />
+            <Image
+              src="/images/iuvo-navy-logo.png"
+              alt="iUvo Logo"
+              width={80}
+              height={30}
+              priority
+            />
           </Link>
 
-          {/* Nav Items */}
-          <div className="hidden md:flex items-center gap-6">
+          {/* Navigation Links */}
+          <div className="hidden md:flex items-center gap-10">
             {navItems.map((item, index) => (
               <Link
                 key={index}
                 href={item.slug}
-                className="text-white text-sm font-medium hover:text-white/80 transition"
+                className={`text-sm font-medium capitalize transition border-b-2 pb-1 ${
+                  pathname === item.slug
+                    ? isTransparent
+                      ? 'border-white text-white'
+                      : 'border-[#001f3f] text-[#001f3f]'
+                    : 'border-transparent'
+                } ${linkHover}`}
               >
                 {item.label}
               </Link>
             ))}
 
-            {/* Shop CTA */}
+            {/* Shop CTA (always visible) */}
             <Link
               href="/shop"
-              className="ml-2 px-4 py-2 bg-[#132845] text-white rounded hover:bg-gray-200 hover:text-[#132845] text-sm font-medium transition"
+              className={`px-4 py-2 rounded transition text-sm font-semibold ${
+                isTransparent
+                  ? 'bg-[#001f3f] text-white hover:bg-white hover:text-[#001f3f]'
+                  : 'bg-[#001f3f] text-white hover:bg-[#003366]'
+              }`}
             >
               Shop
             </Link>
@@ -55,5 +91,5 @@ export default function Navbar() {
         </div>
       </div>
     </nav>
-  )
+  );
 }
