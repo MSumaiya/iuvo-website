@@ -44,7 +44,13 @@ export default function Navbar({ variant = 'light' }: NavbarProps) {
   const isTransparent = variant === 'transparent';
 
   return (
-    <nav className={`fixed top-0 left-0 w-full z-50 ${baseStyle} ${bottomSpacing} shadow-sm py-4`}> {/* Added vertical padding */}
+    //<nav className={`fixed top-0 left-0 w-full z-50 ${baseStyle} ${bottomSpacing} shadow-sm py-4`}> {/* Added vertical padding */}
+    //<nav className={`w-full ${baseStyle} py-4 shadow-sm`}>
+    <nav
+  className={`${
+    variant === 'transparent' ? 'absolute top-0 left-0 w-full z-10' : 'w-full'
+  } ${baseStyle} py-4`}
+>
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="flex items-center justify-between min-h-[80px] md:min-h-[100px]"> {/* Increased height */}
           {/* Logo */}

@@ -30,7 +30,7 @@ export default function Hero() {
 
   return (
     <section
-      className="relative h-[90vh] bg-cover bg-center text-white flex items-center justify-center px-4"
+      className="relative pt-32 h-[90vh] bg-cover bg-center text-white flex items-center justify-center px-4"
       style={{ backgroundImage: `url(${backgroundUrl})` }}
     >
       <div className="bg-black/40 absolute inset-0 z-0"></div>
