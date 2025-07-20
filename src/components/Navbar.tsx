@@ -36,10 +36,10 @@ export default function Navbar({ variant = 'light' }: NavbarProps) {
       ? 'hover:text-white/80'
       : 'hover:text-[#003366]';
 
-  const bottomSpacing =
+ /*  const bottomSpacing =
     variant === 'transparent'
       ? 'mb-3'
-      : '';
+      : ''; */
 
   const isTransparent = variant === 'transparent';
 

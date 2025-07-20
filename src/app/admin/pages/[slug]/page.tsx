@@ -9,6 +9,7 @@ type PageType = {
   _id: string;
   title: string;
   slug: { current: string };
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   content: any;
 };
 
@@ -70,6 +71,7 @@ export default function EditPage() {
       .commit();
 
     alert('Page updated successfully!');
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (error: any) {
     console.error('Update failed:', error.message);
     console.log('Full error object:', error);

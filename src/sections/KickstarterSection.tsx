@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import Image from 'next/image';
+//import Image from 'next/image';
 import { sanityClient } from '@/../sanity/client';
 import { urlForImage } from '@/../sanity/image';
 import { kickstarterSectionQuery } from '@/../sanity/queries';

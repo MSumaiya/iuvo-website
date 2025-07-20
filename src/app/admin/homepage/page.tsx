@@ -6,8 +6,10 @@ import { homepageQuery } from '@/../sanity/queries';
 import Image from 'next/image';
 
 export default function AdminHomepage() {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [data, setData] = useState<any>(null);
   const [heroTitle, setHeroTitle] = useState('');
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [docId, setDocId] = useState('');
   const [saving, setSaving] = useState(false);
   const [message, setMessage] = useState('');

@@ -15,7 +15,7 @@ export default function PrivacyPolicyPage() {
           <p><strong>Effective Date:</strong> 01 July 2025</p>
 
           <p>
-            This Privacy Policy describes how iUVO Health ("we", "us", "our") collects, uses, and protects your personal information when you use our website and services.
+            This Privacy Policy describes how iUVO Health (&quot;we&quot;, &quot;us&quot;, &quot;our&quot;) collects, uses, and protects your personal information when you use our website and services.
           </p>
 
           <p className="font-bold mt-8">Collection of Information</p>

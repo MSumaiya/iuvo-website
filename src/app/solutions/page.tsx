@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
 
 import { useEffect, useState } from 'react';
@@ -17,17 +18,18 @@ import {
   Activity,
   Flame,
   Users,
-  Heart,
+ /*  Heart,
   Virus,
   Apple,
   Clock,
   Scan,
-  Handshake
+  Handshake */
 } from 'lucide-react';
 import * as LucideIcons from 'lucide-react';
 type IconName = keyof typeof LucideIcons;
 
 export default function SolutionsPage() {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [data, setData] = useState<any>(null);
 
   useEffect(() => {

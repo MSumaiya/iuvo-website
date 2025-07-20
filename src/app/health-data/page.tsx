@@ -1,13 +1,14 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import Image from 'next/image';
+//import Image from 'next/image';
 import { sanityClient } from '@/../sanity/client';
 import { healthDataPageQuery } from '@/../sanity/queries';
 import Navbar from '@/components/Navbar';
 import Footer from '@/sections/Footer';
 
 export default function HealthDataPage() {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [data, setData] = useState<any>(null);
 
   useEffect(() => {

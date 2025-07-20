@@ -70,7 +70,7 @@ export default function ContactPage() {
           {/* Contact Form */}
           <div>
             <p className="mb-6 text-gray-700">
-              Whether you're a future user, investor, health partner, or government agency – reach out and let's start the conversation.
+              Whether you&apos;re a future user, investor, health partner, or government agency – reach out and let&apos;s start the conversation.
             </p>
             <form className="space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -137,3 +137,30 @@ export default function ContactPage() {
     </>
   );
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

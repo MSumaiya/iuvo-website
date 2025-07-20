@@ -28,7 +28,7 @@ export default function InvestorRelationsDetailPage() {
           Invest in the Future of Precision Health
         </h2>
         <p className="mb-6 text-gray-800">
-          iUVO is transforming precision health through diagnostics, machine health data, and globally scalable wearable technology. We're building a smarter, more accessible, and more efficient future — across individuals, providers, and public health systems.
+          iUVO is transforming precision health through diagnostics, machine health data, and globally scalable wearable technology. We&apos;re building a smarter, more accessible, and more efficient future — across individuals, providers, and public health systems.
         </p>
 
         <h3 className="text-lg font-semibold mb-2">Why iUVO</h3>

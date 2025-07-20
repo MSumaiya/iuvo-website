@@ -15,7 +15,7 @@ export default function NotFound() {
       <Navbar />
       <main className="min-h-screen bg-[#001f3f] text-white flex flex-col justify-center items-center text-center px-6 py-16">
         <h1 className="text-5xl md:text-6xl font-extrabold mb-4">
-          oops! It's a <span className="text-7xl">404</span>
+          oops! It&apos;s a <span className="text-7xl">404</span>
         </h1>
         <p className="text-lg md:text-xl mb-8 max-w-xl">
           This page doesn’t exist… but your health journey still does. Let’s get you back on track!

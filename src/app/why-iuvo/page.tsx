@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // app/why-iuvo/page.tsx
 import { sanityClient } from '@/../sanity/client';
 import { whyIuvoPageQuery } from '@/../sanity/queries';

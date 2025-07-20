@@ -1,7 +1,7 @@
 import {
   Apple,
   Flame,
-  LayoutDashboard,
+ /*  LayoutDashboard, */
   MailQuestion,
   ShieldCheck,
 } from 'lucide-react';
