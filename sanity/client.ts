@@ -16,6 +16,7 @@ export const sanityClient = createClient({
   apiVersion: '2024-05-01',
   useCdn: false,
   token,
+  perspective: 'published',
 });
 
 console.log('[DEBUG] process.env:', Object.keys(process.env));
