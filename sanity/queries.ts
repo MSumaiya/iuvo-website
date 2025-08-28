@@ -157,7 +157,7 @@ export const solutionsPageQuery = `*[_type == "solutionsPage"][0]{
   builtToAdaptText
 }`;
 
-export const healthDataPageQuery = `
+/* export const healthDataPageQuery = `
   *[_type == "healthDataPage"][0] {
     title,
     subtitle,
@@ -168,7 +168,128 @@ export const healthDataPageQuery = `
       }
     }
   }
+`; */
+
+/* export const healthDataPageQuery = `
+*[_type == "healthDataPage"][0]{
+  title,
+  subtitle,
+  description,
+  "backgroundImageUrl": backgroundImage.asset->url,
+
+  intelligenceHeading,
+  intelligenceItems[]{
+    _key,
+    title,
+    text,
+    "iconUrl": icon.asset->url
+  },
+
+  beyondHeading,
+  bullets,
+  metrics[]{
+    _key,
+    value,
+    label,
+    sublabel
+  },
+
+  ctaLine,
+  "ctaBackgroundUrl": ctaBackground.asset->url,
+
+  evolutionHeading,
+  evolutionIntro,
+  evolutionItems[]{
+    _key,
+    title,
+    text
+  }
+}
 `;
+ */
+/* 
+export const healthDataPageQuery = `
+*[_type == "healthDataPage"][0]{
+  title,
+  subtitle,
+  description,
+  "backgroundImageUrl": backgroundImage.asset->url,
+
+  intelligenceHeading,
+  intelligenceItems[]{
+    _key,
+    title,
+    text,
+    "iconUrl": icon.asset->url
+  }
+}
+`; */
+/* export const healthDataPageQuery = `
+*[_type == "healthDataPage"][0]{
+  title,
+  subtitle,
+  description,
+  "backgroundImageUrl": backgroundImage.asset->url,
+
+  intelligenceHeading,
+  intelligenceIntro, 
+  intelligenceItems[]{
+    _key,
+    title,
+    text,
+    "iconUrl": icon.asset->url
+  },
+
+  // CTA banner fields
+  ctaLine,
+  ctaSubline,
+  "ctaBackgroundUrl": ctaBackground.asset->url
+}
+`; */
+export const healthDataPageQuery = `
+*[_type == "healthDataPage"][0]{
+  // Hero
+  title,
+  subtitle,
+  description,
+  "backgroundImageUrl": backgroundImage.asset->url,
+
+  // Intelligence section
+  intelligenceHeading,
+  intelligenceIntro,
+  intelligenceItems[]{
+    _key,
+    title,
+    text,
+    "iconUrl": icon.asset->url
+  },
+
+  // CTA banner
+  ctaLine,
+  ctaSubline,
+  "ctaBackgroundUrl": ctaBackground.asset->url,
+
+  // Beyond Data Collection
+  beyondHeading,
+  beyondIntro,
+  bullets,
+  metrics[]{
+    _key,
+    value,
+    label,
+    sublabel,
+    "iconUrl": icon.asset->url
+  },
+
+  // What's New in Our Evolution
+  evolutionHeading,
+  evolutionIntro,
+  evolutionSubheading,
+  evolutionBullets
+}
+`;
+
+
 
 export const investorRelationsQuery = `*[_type == "investorRelationsPage"][0]{
   sections[]{
