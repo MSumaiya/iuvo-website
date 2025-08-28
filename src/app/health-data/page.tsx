@@ -341,3 +341,43 @@ const METRICS = [
 ];
 
 
+// ---- fallbacks (put near top or bottom of the file) ----
+/* type IntelligenceItem = {
+  _key?: string;
+  title: string;
+  text: string;
+  iconUrl?: string;
+}; */
+
+const defaultIntelligence: IntelligenceItem[] = [
+  {
+    title: 'Predictive Analytics',
+    text:
+      'Our advanced AI models analyze biometric and emotional trends to accurately forecast potential health risks, enabling timely, personalized preventative interventions before symptoms arise or conditions worsen.',
+  },
+  {
+    title: 'Real-time Insights',
+    text:
+      'Our neuroadaptive technology processes multi-signal inputs—such as HRV, stress, and cognitive load—in real time, enabling early detection of subtle signs of health deterioration or hormonal imbalance.',
+  },
+  {
+    title: 'Patient Empowerment',
+    text:
+      'Personalized dashboards and real-time alerts equip users to actively manage their health, encouraging a more engaged, proactive, and informed approach to maintaining wellness and preventing potential issues.',
+  },
+  {
+    title: 'Provider Support',
+    text:
+      'We offer clinicians tools that deliver actionable insights from comprehensive datasets and clinical guidelines, enhancing their ability to make timely, accurate, and well-informed decisions for patient care.',
+  },
+  {
+    title: 'Data Security',
+    text:
+      'Our solution ensures end-to-end encryption, adheres to HIPAA and GDPR compliance, enables zero-knowledge data sharing, and performs all processing on-device with no cloud dependency for maximum privacy.',
+  },
+  {
+    title: 'System Integration',
+    text:
+      'iUvo fully supports FHIR and HL7 standards, offers open API endpoints with sub-200ms latency, and guarantees 99.98% up-time to enable seamless, reliable integration with EMRs, insurers, and other healthcare systems.',
+  },
+];
