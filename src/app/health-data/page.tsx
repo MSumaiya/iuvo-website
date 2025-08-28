@@ -1,51 +1,6 @@
-/* 'use client';
-
-import { useEffect, useState } from 'react';
-//import Image from 'next/image';
-import { sanityClient } from '@/../sanity/client';
-import { healthDataPageQuery } from '@/../sanity/queries';
-import Navbar from '@/components/Navbar';
-import Footer from '@/sections/Footer';
-
-export default function HealthDataPage() {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const [data, setData] = useState<any>(null);
-
-  useEffect(() => {
-    sanityClient.fetch(healthDataPageQuery).then(setData).catch(console.error);
-  }, []);
-
-  if (!data) return <div className="p-8">Loading...</div>;
-
-  return (
-    <div>
-      <Navbar variant="light" />
-
-      
-      <section
-        className="relative h-[80vh] bg-cover bg-center flex items-center justify-center text-white text-center px-4"
-        style={{ backgroundImage: `url(${data.backgroundImage?.asset?.url})` }}
-      >
-        <div className="absolute inset-0 bg-black/50"></div>
-        <div className="relative z-10 max-w-3xl">
-          <h1 className="text-4xl font-bold mb-4">{data.title}</h1>
-          <h2 className="text-2xl font-semibold mb-2">{data.subtitle}</h2>
-          <p className="text-base">{data.description}</p>
-        </div>
-      </section>
-
-      
-      <div className="h-[300px] bg-[#0A2342]"></div>
-
-      <Footer />
-    </div>
-  );
-}
- */
-
 'use client';
 
-import { useEffect, useState } from 'react';
+import { JSXElementConstructor, Key, ReactElement, ReactNode, ReactPortal, useEffect, useState } from 'react';
 import { sanityClient } from '@/../sanity/client';
 import { healthDataPageQuery } from '@/../sanity/queries';
 import Navbar from '@/components/Navbar';
@@ -76,7 +31,7 @@ type HealthDataDoc = {
   intelligenceIntro?:string;
   intelligenceItems?: IntelligenceItem[];
 
-    ctaLine?: string;
+  ctaLine?: string;
   ctaSubline?: string;
   ctaBackgroundUrl?: string;
 
@@ -91,7 +46,7 @@ type HealthDataDoc = {
   evolutionBullets?: string[];
 };
 
-
+type EvolutionBullet = string;
 
 
 export default function HealthDataPage() {
@@ -293,7 +248,7 @@ const ctaSub =
     </h4>
 
     <ul className="space-y-3">
-      {(data.evolutionBullets?.length ? data.evolutionBullets : EVOLUTION_BULLETS).map((item, idx) => (
+      {(data.evolutionBullets?.length ? data.evolutionBullets : EVOLUTION_BULLETS).map((item: string | number | bigint | boolean | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<string | number | bigint | boolean | ReactPortal | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | null | undefined> | Iterable<ReactNode> | null | undefined, idx: Key | null | undefined) => (
         <li key={idx} className="flex items-start gap-3">
           {/* rounded tick icon */}
           <svg
@@ -323,6 +278,8 @@ const ctaSub =
   );
 }
 
+const DEFAULT_EVOLUTION_INTRO =
+  "Inspired by emotional AI pioneers, we’re introducing a next-gen framework.";
 
 
 const BULLETS = [
@@ -333,13 +290,19 @@ const BULLETS = [
   'Continuous improvement via feedback and analytics.',
 ];
 
-const METRICS = [
+/* const METRICS = [
   { value: '35%', label: 'Faster insights' },
   { value: '24/7', label: 'Monitoring' },
   { value: '97%', label: 'Data uptime' },
   { value: 'Real-time', label: 'Dashboards' },
-];
+]; */
 
+const METRICS: Metric[] = [
+  { value: '35%', label: 'Better Outcomes', sublabel: '',  iconUrl: '/icons/metrics/trend-up.svg' },
+  { value: '97%', label: 'Accuracy Rate',   sublabel: '',  iconUrl: '/icons/metrics/target.svg' },
+  { value: '24/7', label: 'Monitoring',     sublabel: '',  iconUrl: '/icons/metrics/heartbeat.svg' },
+  { value: 'Real-time', label: 'Processing', sublabel: '', iconUrl: '/icons/metrics/bolt.svg' },
+];
 
 // ---- fallbacks (put near top or bottom of the file) ----
 /* type IntelligenceItem = {
@@ -349,6 +312,12 @@ const METRICS = [
   iconUrl?: string;
 }; */
 
+const EVOLUTION_BULLETS: EvolutionBullet[] = [
+  "Sovereign AI Agent: Your AI adapts with your body and behavior. It belongs to you.",
+  "Emotional Signal Mapping: Capturing emotional shifts to enhance context, prediction, and intervention.",
+  "Zero-Knowledge Sharing Protocols: Contribute to research or insurance models—without exposing raw data.",
+  "Optional Tokenized Rewards: Future plans include reward models for shared compute and insights."
+];
 const defaultIntelligence: IntelligenceItem[] = [
   {
     title: 'Predictive Analytics',
