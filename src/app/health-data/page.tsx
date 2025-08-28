@@ -323,14 +323,7 @@ const ctaSub =
   );
 }
 
-const INTELLIGENCE = [
-  { title: 'Predictive Analytics', text: 'Turn raw signals into proactive interventions and earlier detection.' },
-  { title: 'Real-time Insights', text: 'Live dashboards that surface the right signal at the right moment.' },
-  { title: 'Patient Empowerment', text: 'Personalized feedback loops that drive healthy habits and adherence.' },
-  { title: 'Data Security', text: 'Privacy-first data pipelines with encryption and strict access control.' },
-  { title: 'System Integration', text: 'Interoperable with EHR/EMR systems and national platforms.' },
-  { title: 'Population Support', text: 'Cohort analysis and outreach tools for providers and payers.' },
-];
+
 
 const BULLETS = [
   'Biometric signal collection with medical-grade accuracy.',
@@ -347,7 +340,4 @@ const METRICS = [
   { value: 'Real-time', label: 'Dashboards' },
 ];
 
-const EVOLUTION = [
-  { title: 'Core Components Included', text: 'Identity, access, consent, analytics, dashboards, and secure APIs.' },
-  { title: 'Extensible by Design', text: 'Add modules for wearables, AI triage, or clinical workflows.' },
-];
+
