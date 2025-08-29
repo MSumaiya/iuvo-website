@@ -14,6 +14,7 @@ import section from './section'
 import solutionsPage from './solutionsPage'
 import healthDataPage from './healthDataPage'
 import investorRelationsPage from './investorRelationsPage'
+import vision2030Page from './vision2030Page'
 
 export const schemaTypes = [
     heroSection,
@@ -29,5 +30,6 @@ export const schemaTypes = [
     section,
     solutionsPage,
     healthDataPage,
-    investorRelationsPage
+    investorRelationsPage,
+    vision2030Page
 ]
