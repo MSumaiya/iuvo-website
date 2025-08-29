@@ -342,10 +342,31 @@ export const homepageQuery = `
   }
 `;
 
+/* export const vision2030PageQuery = `
+*[_type == "vision2030Page"][0]{
+  title,
+  "heroImageUrl": heroImage.asset->url,
+  lastUpdated,
+  sections[] {
+    heading,
+    content
+  }
+}
+`; */
 
-
-
-
+// sanity/queries.ts
+export const vision2030PageQuery = `
+*[_type == "vision2030Page"][0]{
+  title,
+  lastUpdated,
+  "heroImageUrl": heroImage.asset->url,
+  sections[]{
+    heading,
+    paragraphs,     // <- array of text
+    bullets         // <- array of string
+  }
+}
+`;
 
 
 export const getAllPagesQuery = `
