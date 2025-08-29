@@ -368,6 +368,16 @@ export const vision2030PageQuery = `
 }
 `;
 
+export const compliancePageQuery = `*[_type == "compliancePage"][0]{
+  title,
+  "heroImageUrl": heroImage.asset->url,
+  lastUpdated,
+  sections[]{
+    heading,
+    paragraphs,
+    bullets
+  }
+}`;
 
 export const getAllPagesQuery = `
   *[_type == "page"]{
